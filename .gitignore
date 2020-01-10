@@ -1,0 +1,8 @@
+/.vs/CrossProtectedData/DesignTimeBuild/*.dtbcache
+/.vs/CrossProtectedData/v16/*.suo
+/.vs/CrossProtectedData/v16/Server/sqlite3/*.lock
+sqlite3
+/.vs/CrossProtectedData/v16/TestStore/0/*.testlog
+/.vs/CrossProtectedData/v16/TestStore/0/testlog.manifest
+/.vs/CrossProtectedData/v16/TestStore/1
+obj

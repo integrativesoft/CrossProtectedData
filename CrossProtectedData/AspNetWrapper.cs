@@ -1,0 +1,67 @@
+﻿/*
+Copyright (c) 2020 Integrative Software LLC
+Created: 1/2020
+MIT License
+Author: Pablo Carbonell
+*/
+
+using Microsoft.AspNetCore.DataProtection;
+using System;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace CrossProtectedData
+{
+    class AspNetWrapper : IProtector
+    {
+        private const string AppName = "CrossProtect";
+        private const string BaseName = "CrossProtected_";
+
+        public byte[] Protect(byte[] userData, byte[] optionalEntropy, DataProtectionScope scope)
+        {
+            var protector = GetProtector(scope, optionalEntropy);
+            return protector.Protect(userData);
+        }
+
+        public byte[] Unprotect(byte[] encryptedData, byte[] optionalEntropy, DataProtectionScope scope)
+        {
+            var protector = GetProtector(scope, optionalEntropy);
+            return protector.Unprotect(encryptedData);
+        }
+
+        private IDataProtector GetProtector(DataProtectionScope scope, byte[] optionalEntropy)
+        {
+            if (scope == DataProtectionScope.CurrentUser)
+            {
+                return GetUserProtector(optionalEntropy);
+            }
+            else
+            {
+                return GetMachineProtector(optionalEntropy);
+            }
+        }
+
+        private IDataProtector GetUserProtector(byte[] optionalEntropy)
+        {
+            var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            var path = Path.Combine(appData, AppName);
+            var info = new DirectoryInfo(path);
+            var provider = DataProtectionProvider.Create(info);
+            var purpose = CreatePurpose(optionalEntropy);
+            return provider.CreateProtector(purpose);
+        }
+
+        private IDataProtector GetMachineProtector(byte[] optionalEntropy)
+        {
+            var provider = DataProtectionProvider.Create(AppName);
+            var purpose = CreatePurpose(optionalEntropy);
+            return provider.CreateProtector(purpose);
+        }
+
+        private string CreatePurpose(byte[] optionalEntropy)
+        {
+            return BaseName + Encoding.ASCII.GetString(optionalEntropy);
+        }
+    }
+}

@@ -7,7 +7,7 @@ Author: Pablo Carbonell
 
 using System.Security.Cryptography;
 
-namespace CrossProtectedData
+namespace Integrative.Encryption
 {
     sealed class DpapiWrapper : IProtector
     {

@@ -6,3 +6,6 @@ sqlite3
 /.vs/CrossProtectedData/v16/TestStore/0/testlog.manifest
 /.vs/CrossProtectedData/v16/TestStore/1
 obj
+*.dll
+*.pdb
+/CrossProtectedTesting/bin/Debug/netcoreapp3.1

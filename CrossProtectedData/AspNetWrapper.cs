@@ -8,10 +8,12 @@ Author: Pablo Carbonell
 using Microsoft.AspNetCore.DataProtection;
 using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace CrossProtectedData
+[assembly: InternalsVisibleTo("CrossProtectedTesting")]
+namespace Integrative.Encryption
 {
     class AspNetWrapper : IProtector
     {
@@ -61,7 +63,8 @@ namespace CrossProtectedData
 
         private string CreatePurpose(byte[] optionalEntropy)
         {
-            return BaseName + Encoding.ASCII.GetString(optionalEntropy);
+            var result = BaseName + Convert.ToBase64String(optionalEntropy);
+            return Uri.EscapeDataString(result);
         }
     }
 }

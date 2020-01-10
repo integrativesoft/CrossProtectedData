@@ -8,7 +8,7 @@ Author: Pablo Carbonell
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 
-namespace CrossProtectedData
+namespace Integrative.Encryption
 {
     interface IProtector
     {

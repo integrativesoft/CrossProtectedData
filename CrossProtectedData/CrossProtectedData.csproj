@@ -4,11 +4,34 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Integrative.CrossProtectedData</AssemblyName>
     <RootNamespace>Integrative.CrossProtectedData</RootNamespace>
+    <PackageId>Integrative.Encryption.CrossProtect</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Pablo Carbonell</Authors>
+    <Company>Integrative Software LLC</Company>
+    <Product>CrossProtectedData</Product>
+    <Description>A DataProtect wrapper that uses DPAPI in Windows and AspNetCore.DataProtection in other platforms.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/integrativesoft/CrossProtectedData</PackageProjectUrl>
+    <PackageIcon>Integrative.png</PackageIcon>
+    <PackageIconUrl />
+    <RepositoryUrl>https://github.com/integrativesoft/CrossProtectedData</RepositoryUrl>
+    <PackageReleaseNotes>Initial version</PackageReleaseNotes>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>cryptography crypto protected-data DPAPI encryption</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.DataProtection.Extensions" Version="3.1.0" />
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Assets\Integrative.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

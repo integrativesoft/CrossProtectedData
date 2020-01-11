@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Integrative.CrossProtectedData</AssemblyName>
     <RootNamespace>Integrative.CrossProtectedData</RootNamespace>
-    <PackageId>Integrative.Encryption.CrossProtect</PackageId>
+    <PackageId>Integrative.CrossProtect</PackageId>
     <Version>0.1.0</Version>
     <Authors>Pablo Carbonell</Authors>
     <Company>Integrative Software LLC</Company>

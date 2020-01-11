@@ -3,8 +3,8 @@
 A DataProtect wrapper that uses DPAPI in Windows and AspNetCore.DataProtection in non-Windows platforms.
 
 This library offers the same interface as the `ProtectedData` class which uses DPAPI and works in Windows only.
-- When running in Windows, it calls the ProtectedData class.
-- When running in non-Windows, it uses instead AspNetCore.DataProtection
+- When running in Windows, it calls directly the original ProtectedData class supported in Windows.
+- When running in non-Windows, it uses instead AspNetCore.DataProtection.
 
 # Example
 

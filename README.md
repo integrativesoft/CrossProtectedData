@@ -1,6 +1,6 @@
 # CrossProtectedData
 
-A DataProtect wrapper that uses DPAPI in Windows and AspNetCore.DataProtection in non-Windows platforms.
+A `ProtectedData` wrapper that uses DPAPI in Windows and AspNetCore.DataProtection in non-Windows platforms.
 
 This library offers the same interface as the `ProtectedData` class which uses DPAPI and works in Windows only.
 - When running in Windows, it calls directly the original ProtectedData class supported in Windows.

@@ -6,6 +6,7 @@ This library offers the same interface as the `ProtectedData` class which uses D
 - When running in Windows, it calls directly the original ProtectedData class supported in Windows.
 - When running in non-Windows, it uses instead AspNetCore.DataProtection.
 
+There is no need to download this repository. This library is available as a [NuGet package](https://www.nuget.org/packages/Integrative.CrossProtect/).
 # Example
 
 ```csharp

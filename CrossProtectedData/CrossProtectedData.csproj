@@ -6,7 +6,7 @@
     <RootNamespace>Integrative.CrossProtectedData</RootNamespace>
     <PackageId>Integrative.CrossProtect</PackageId>
     <Version>0.1.0</Version>
-    <Authors>Pablo Carbonell</Authors>
+    <Authors>Integrative Software LLC</Authors>
     <Company>Integrative Software LLC</Company>
     <Product>CrossProtectedData</Product>
     <Description>A DataProtect wrapper that uses DPAPI in Windows and AspNetCore.DataProtection in other platforms.</Description>

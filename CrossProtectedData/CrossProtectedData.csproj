@@ -19,7 +19,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>cryptography crypto protected-data DPAPI encryption</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,11 +1,12 @@
 # CrossProtectedData
 
-A DataProtect wrapper that uses DPAPI in Windows and AspNetCore.DataProtection in non-Windows platforms.
+A replacement for the `ProtectedData` class in NET Standard that works not only in Windows but also Linux/MacOS/others.
 
-This library offers the same interface as the `ProtectedData` class which uses DPAPI and works in Windows only.
+This library is a wrapper of `ProtectedData` and exposes the same interface. The difference is the following:
 - When running in Windows, it calls directly the original ProtectedData class supported in Windows.
-- When running in non-Windows, it uses instead AspNetCore.DataProtection.
+- When running in non-Windows, it implements those calls using instead the AspNetCore.DataProtection library.
 
+There is no need to download this repository. This library is available as a [NuGet package](https://www.nuget.org/packages/Integrative.CrossProtect/).
 # Example
 
 ```csharp

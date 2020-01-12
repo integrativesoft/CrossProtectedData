@@ -5,11 +5,11 @@
     <AssemblyName>Integrative.CrossProtectedData</AssemblyName>
     <RootNamespace>Integrative.CrossProtectedData</RootNamespace>
     <PackageId>Integrative.CrossProtect</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>Integrative Software LLC</Authors>
     <Company>Integrative Software LLC</Company>
     <Product>CrossProtectedData</Product>
-    <Description>A DataProtect wrapper that uses DPAPI in Windows and AspNetCore.DataProtection in other platforms.</Description>
+    <Description>A ProtectedData wrapper that uses DPAPI in Windows and AspNetCore.DataProtection in other platforms.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/integrativesoft/CrossProtectedData</PackageProjectUrl>
     <PackageIcon>Integrative.png</PackageIcon>

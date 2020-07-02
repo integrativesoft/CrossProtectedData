@@ -1,4 +1,4 @@
-# CrossProtectedData
+# CrossProtectedData [![Download count](https://img.shields.io/nuget/dt/Integrative.CrossProtect.svg)]
 
 A replacement for the `ProtectedData` class in NET Standard that works not only in Windows but also Linux/MacOS/others.
 

@@ -5,7 +5,7 @@
     <AssemblyName>Integrative.CrossProtectedData</AssemblyName>
     <RootNamespace>Integrative.CrossProtectedData</RootNamespace>
     <PackageId>Integrative.CrossProtect</PackageId>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <Authors>Integrative Software LLC</Authors>
     <Company>Integrative Software LLC</Company>
     <Product>CrossProtectedData</Product>
@@ -15,7 +15,8 @@
     <PackageIcon>Integrative.png</PackageIcon>
     <PackageIconUrl />
     <RepositoryUrl>https://github.com/integrativesoft/CrossProtectedData</RepositoryUrl>
-    <PackageReleaseNotes>Initial version</PackageReleaseNotes>
+    <PackageReleaseNotes>- enable SourceLink
+- bumped packages</PackageReleaseNotes>
     <RepositoryType>git</RepositoryType>
     <PackageTags>cryptography crypto protected-data DPAPI encryption</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -31,7 +32,7 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.DataProtection.Extensions" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.Extensions" Version="3.1.6" />
     <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.7.0" />
   </ItemGroup>
 

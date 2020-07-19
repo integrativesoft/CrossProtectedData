@@ -12,3 +12,5 @@ obj
 /CrossProtectedData/bin/Release
 /CrossProtectedExample/bin/Release/netcoreapp3.1
 /CrossProtectedTesting/bin/Release/netcoreapp3.1
+*.nupkg
+*.snupkg

@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v3.1": {
       "CrossProtectedExample/1.0.0": {
         "dependencies": {
-          "Integrative.CrossProtectedData": "1.0.0"
+          "Integrative.CrossProtect": "0.1.1",
+          "Microsoft.SourceLink.GitHub": "1.0.0"
         },
         "runtime": {
           "CrossProtectedExample.dll": {}
@@ -60,6 +61,7 @@
           }
         }
       },
+      "Microsoft.Build.Tasks.Git/1.0.0": {},
       "Microsoft.Extensions.Configuration.Abstractions/3.1.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "3.1.0"
@@ -144,6 +146,13 @@
         }
       },
       "Microsoft.NETCore.Platforms/3.1.0": {},
+      "Microsoft.SourceLink.Common/1.0.0": {},
+      "Microsoft.SourceLink.GitHub/1.0.0": {
+        "dependencies": {
+          "Microsoft.Build.Tasks.Git": "1.0.0",
+          "Microsoft.SourceLink.Common": "1.0.0"
+        }
+      },
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.7.0",
@@ -281,7 +290,7 @@
           }
         }
       },
-      "Integrative.CrossProtectedData/1.0.0": {
+      "Integrative.CrossProtect/0.1.1": {
         "dependencies": {
           "Microsoft.AspNetCore.DataProtection.Extensions": "3.1.0",
           "System.Security.Cryptography.ProtectedData": "4.7.0"
@@ -325,6 +334,13 @@
       "sha512": "sha512-br1yGiEu2gJrlfAEnjQ7hg9AUY4X6SYePZmQ5idEZefEquAssYse7djE6lItomI3vqHWJ/Hzn0x3XiG4F/jgAA==",
       "path": "microsoft.aspnetcore.dataprotection.extensions/3.1.0",
       "hashPath": "microsoft.aspnetcore.dataprotection.extensions.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.Build.Tasks.Git/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z2fpmmt+1Jfl+ZnBki9nSP08S1/tbEOxFdsK1rSR+LBehIJz1Xv9/6qOOoGNqlwnAGGVGis1Oj6S8Kt9COEYlQ==",
+      "path": "microsoft.build.tasks.git/1.0.0",
+      "hashPath": "microsoft.build.tasks.git.1.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration.Abstractions/3.1.0": {
       "type": "package",
@@ -388,6 +404,20 @@
       "sha512": "sha512-z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "path": "microsoft.netcore.platforms/3.1.0",
       "hashPath": "microsoft.netcore.platforms.3.1.0.nupkg.sha512"
+    },
+    "Microsoft.SourceLink.Common/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-G8DuQY8/DK5NN+3jm5wcMcd9QYD90UV7MiLmdljSJixi3U/vNaeBKmmXUqI4DJCOeWizIUEh4ALhSt58mR+5eg==",
+      "path": "microsoft.sourcelink.common/1.0.0",
+      "hashPath": "microsoft.sourcelink.common.1.0.0.nupkg.sha512"
+    },
+    "Microsoft.SourceLink.GitHub/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aZyGyGg2nFSxix+xMkPmlmZSsnGQ3w+mIG23LTxJZHN+GPwTQ5FpPgDo7RMOq+Kcf5D4hFWfXkGhoGstawX13Q==",
+      "path": "microsoft.sourcelink.github/1.0.0",
+      "hashPath": "microsoft.sourcelink.github.1.0.0.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/4.7.0": {
       "type": "package",
@@ -466,7 +496,7 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
-    "Integrative.CrossProtectedData/1.0.0": {
+    "Integrative.CrossProtect/0.1.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

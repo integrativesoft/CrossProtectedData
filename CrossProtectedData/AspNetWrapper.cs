@@ -19,14 +19,18 @@ namespace Integrative.Encryption
         private const string AppName = "CrossProtect";
         private const string BaseName = "CrossProtected_";
 
+        private static readonly byte[] _emptyBytes = new byte[0];
+
         public byte[] Protect(byte[] userData, byte[] optionalEntropy, DataProtectionScope scope)
         {
+            optionalEntropy = optionalEntropy ?? _emptyBytes;
             var protector = GetProtector(scope, optionalEntropy);
             return protector.Protect(userData);
         }
 
         public byte[] Unprotect(byte[] encryptedData, byte[] optionalEntropy, DataProtectionScope scope)
         {
+            optionalEntropy = optionalEntropy ?? _emptyBytes;
             var protector = GetProtector(scope, optionalEntropy);
             return protector.Unprotect(encryptedData);
         }

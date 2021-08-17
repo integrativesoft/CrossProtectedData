@@ -21,23 +21,23 @@ namespace Integrative.Encryption
 
         private static readonly byte[] _emptyBytes = new byte[0];
 
-        public byte[] Protect(byte[] userData, byte[] optionalEntropy, DataProtectionScope scope)
+        public byte[] Protect(byte[] userData, byte[] optionalEntropy, CrossProtectionScope scope)
         {
             optionalEntropy = optionalEntropy ?? _emptyBytes;
             var protector = GetProtector(scope, optionalEntropy);
             return protector.Protect(userData);
         }
 
-        public byte[] Unprotect(byte[] encryptedData, byte[] optionalEntropy, DataProtectionScope scope)
+        public byte[] Unprotect(byte[] encryptedData, byte[] optionalEntropy, CrossProtectionScope scope)
         {
             optionalEntropy = optionalEntropy ?? _emptyBytes;
             var protector = GetProtector(scope, optionalEntropy);
             return protector.Unprotect(encryptedData);
         }
 
-        private IDataProtector GetProtector(DataProtectionScope scope, byte[] optionalEntropy)
+        private IDataProtector GetProtector(CrossProtectionScope scope, byte[] optionalEntropy)
         {
-            if (scope == DataProtectionScope.CurrentUser)
+            if (scope == CrossProtectionScope.CurrentUser)
             {
                 return GetUserProtector(optionalEntropy);
             }

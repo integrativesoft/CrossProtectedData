@@ -11,14 +11,14 @@ namespace Integrative.Encryption
 {
     sealed class DpapiWrapper : IProtector
     {
-        public byte[] Protect(byte[] userData, byte[] optionalEntropy, DataProtectionScope scope)
+        public byte[] Protect(byte[] userData, byte[] optionalEntropy, CrossProtectionScope scope)
         {
-            return ProtectedData.Protect(userData, optionalEntropy, scope);
+            return ProtectedData.Protect(userData, optionalEntropy, (DataProtectionScope)scope);
         }
 
-        public byte[] Unprotect(byte[] encryptedData, byte[] optionalEntropy, DataProtectionScope scope)
+        public byte[] Unprotect(byte[] encryptedData, byte[] optionalEntropy, CrossProtectionScope scope)
         {
-            return ProtectedData.Unprotect(encryptedData, optionalEntropy, scope);
+            return ProtectedData.Unprotect(encryptedData, optionalEntropy, (DataProtectionScope)scope);
         }
     }
 }

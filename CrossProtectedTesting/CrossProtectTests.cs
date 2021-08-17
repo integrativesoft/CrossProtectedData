@@ -24,17 +24,17 @@ namespace CrossProtectedTesting
         public void ProtectTextMachineNoEntropy()
         {
             var entropy = Array.Empty<byte>();
-            RunTrip(entropy, DataProtectionScope.LocalMachine);
+            RunTrip(entropy, CrossProtectionScope.LocalMachine);
         }
 
         [Fact]
         public void ProtectTextMachineEntropy()
         {
             var entropy = new byte[] { 24, 76, 211, 4 };
-            RunTrip(entropy, DataProtectionScope.LocalMachine);
+            RunTrip(entropy, CrossProtectionScope.LocalMachine);
         }
 
-        private void RunTrip(byte[] entropy, DataProtectionScope scope)
+        private void RunTrip(byte[] entropy, CrossProtectionScope scope)
         {
             var encrypted = CrossProtect.Protect(_sampleBytes, entropy, scope);
             var unencrypted = CrossProtect.Unprotect(encrypted, entropy, scope);
@@ -48,7 +48,7 @@ namespace CrossProtectedTesting
             Skip.IfNot(RuntimeInformation.IsOSPlatform(OSPlatform.Windows));
             var entropy = new byte[] { 24, 76, 211, 4, 255 };
             var protector = new DpapiWrapper();
-            RunTrip(entropy, DataProtectionScope.LocalMachine, protector);
+            RunTrip(entropy, CrossProtectionScope.LocalMachine, protector);
         }
 
         [SkippableFact]
@@ -57,7 +57,7 @@ namespace CrossProtectedTesting
             Skip.IfNot(RuntimeInformation.IsOSPlatform(OSPlatform.Windows));
             var entropy = new byte[] { 24, 76, 211, 4, 255 };
             var protector = new AspNetWrapper();
-            RunTrip(entropy, DataProtectionScope.CurrentUser, protector);
+            RunTrip(entropy, CrossProtectionScope.CurrentUser, protector);
         }
 
         [SkippableFact]
@@ -66,7 +66,7 @@ namespace CrossProtectedTesting
             Skip.IfNot(RuntimeInformation.IsOSPlatform(OSPlatform.Windows));
             var entropy = new byte[] { 24, 76, 211, 4, 255 };
             var protector = new AspNetWrapper();
-            RunTrip(entropy, DataProtectionScope.LocalMachine, protector);
+            RunTrip(entropy, CrossProtectionScope.LocalMachine, protector);
         }
 
         [SkippableFact]
@@ -75,10 +75,10 @@ namespace CrossProtectedTesting
             Skip.IfNot(RuntimeInformation.IsOSPlatform(OSPlatform.Windows));
             var entropy = new byte[] { 24, 76, 211, 4, 255 };
             var protector = new DpapiWrapper();
-            RunTrip(entropy, DataProtectionScope.CurrentUser, protector);
+            RunTrip(entropy, CrossProtectionScope.CurrentUser, protector);
         }
 
-        private void RunTrip(byte[] entropy, DataProtectionScope scope, IProtector protector)
+        private void RunTrip(byte[] entropy, CrossProtectionScope scope, IProtector protector)
         {
             var encrypted = protector.Protect(_sampleBytes, entropy, scope);
             var unencrypted = protector.Unprotect(encrypted, entropy, scope);
@@ -91,8 +91,8 @@ namespace CrossProtectedTesting
         {
             var protector = new AspNetWrapper();
             var entropy = new byte[] { 24, 76, 211, 4, 255 };
-            var encrypted = protector.Protect(_sampleBytes, entropy, DataProtectionScope.CurrentUser);
-            Assert.ThrowsAny<CryptographicException>(() => protector.Unprotect(encrypted, entropy, DataProtectionScope.LocalMachine));
+            var encrypted = protector.Protect(_sampleBytes, entropy, CrossProtectionScope.CurrentUser);
+            Assert.ThrowsAny<CryptographicException>(() => protector.Unprotect(encrypted, entropy, CrossProtectionScope.LocalMachine));
         }
 
         [Fact]
@@ -100,8 +100,8 @@ namespace CrossProtectedTesting
         {
             var protector = new AspNetWrapper();
             var entropy = new byte[] { 24, 76, 211, 4, 255 };
-            var encrypted = protector.Protect(_sampleBytes, entropy, DataProtectionScope.LocalMachine);
-            Assert.ThrowsAny<CryptographicException>(() => protector.Unprotect(encrypted, entropy, DataProtectionScope.CurrentUser));
+            var encrypted = protector.Protect(_sampleBytes, entropy, CrossProtectionScope.LocalMachine);
+            Assert.ThrowsAny<CryptographicException>(() => protector.Unprotect(encrypted, entropy, CrossProtectionScope.CurrentUser));
         }
 
         [Fact]
@@ -110,8 +110,8 @@ namespace CrossProtectedTesting
             var protector = new AspNetWrapper();
             var entropy1 = new byte[] { 24, 76, 211, 4, 255 };
             var entropy2 = new byte[] { 24, 76, 211, 4, 254 };
-            var encrypted = protector.Protect(_sampleBytes, entropy1, DataProtectionScope.LocalMachine);
-            Assert.ThrowsAny<CryptographicException>(() => protector.Unprotect(encrypted, entropy2, DataProtectionScope.LocalMachine));
+            var encrypted = protector.Protect(_sampleBytes, entropy1, CrossProtectionScope.LocalMachine);
+            Assert.ThrowsAny<CryptographicException>(() => protector.Unprotect(encrypted, entropy2, CrossProtectionScope.LocalMachine));
         }
 
         [Fact]
@@ -120,8 +120,8 @@ namespace CrossProtectedTesting
             var protector = new AspNetWrapper();
             var entropy1 = new byte[] { 24, 76, 211, 4, 255 };
             var entropy2 = new byte[] { 24, 76, 211, 4, 254 };
-            var encrypted = protector.Protect(_sampleBytes, entropy1, DataProtectionScope.CurrentUser);
-            Assert.ThrowsAny<CryptographicException>(() => protector.Unprotect(encrypted, entropy2, DataProtectionScope.CurrentUser));
+            var encrypted = protector.Protect(_sampleBytes, entropy1, CrossProtectionScope.CurrentUser);
+            Assert.ThrowsAny<CryptographicException>(() => protector.Unprotect(encrypted, entropy2, CrossProtectionScope.CurrentUser));
         }
 
     }
